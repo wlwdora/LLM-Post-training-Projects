@@ -1,0 +1,33 @@
+from ultralytics import YOLO
+import torch
+import os
+os.chdir("D:/datasets")  # 切换到数据集目录
+# 1. 创建带CBAM的新模型结构
+new_model = YOLO("cbam_p3.yaml")
+
+# 2. 关键：加载旧模型的权重（框架会自动跳过不匹配的CBAM层，完美迁移！）
+#    如果你的 best.pt 在 D:/datasets/runs/... 下，记得写对路径
+old_weights_path = "runs/detect/runs/hand/rps/weights/best.pt"
+new_model.load(old_weights_path) 
+print(f"✓ 成功加载旧模型权重: {old_weights_path}")
+
+# 3. 开始微调
+results = new_model.train(
+    data="D:/datasets/data.yaml",   # 建议写绝对路径，避免 os.chdir 带来的副作用
+    epochs=50,                      
+    imgsz=640,
+    batch=16,
+    cos_lr=True,                    # 余弦退火学习率，收敛更平滑
+    # mosaic=0.5,                   # 可选：微调时适当降低 mosaic 比例，兼顾稳定性和泛化
+    device='cuda',                  
+    lr0=0.001,                      # 小学习率微调，保护预训练特征
+    lrf=0.01,                       
+    warmup_epochs=3,                
+    weight_decay=0.0005,            
+    patience=15,                    
+    workers=0,
+    project='runs/cbam_finetune',
+    name='exp'
+)
+
+print("微调完成！最佳模型保存在 runs/cbam_finetune/exp/weights/best.pt")
