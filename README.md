@@ -44,14 +44,6 @@ pip install -r requirements.txt
 请将训练好的 ONNX 模型文件（命名为 `best.onnx`）放置于项目根目录下。
 > 注：由于 GitHub 文件大小限制，模型文件需自行训练或从下方链接获取。
 
-### 3. 启动应用
-在终端运行以下命令启动 Web 交互界面：
-
-```bash
-python app.py
-```
-
-启动成功后，浏览器将自动弹出（或访问 `http://localhost:7860`），上传图片即可体验实时识别。
 
 ---
 
@@ -72,7 +64,8 @@ YOLOv8-Hand-Gesture-Recognition/
 
 ## 🖼️ 效果展示
 
-*(建议在这里放一张你的识别截图或 GIF 动图)*
+ <img width="1206" height="920" alt="505f270b557b4c9a02aebe6f922c0b9d" src="https://github.com/user-attachments/assets/db9d9839-8384-4498-97b8-244c42099723" />
+
 
 ---
 
