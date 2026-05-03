@@ -3,7 +3,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![YOLOv8](https://img.shields.io/badge/Framework-YOLOv8-orange.svg)](https://github.com/ultralytics/ultralytics)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE）
 
 > **项目简介**：这是一个从模型改进到端侧部署的完整 AI 实践项目。针对经典的“石头剪刀布”手势识别场景，通过在 YOLOv8 骨干网络中引入 **CBAM 注意力机制**，显著提升了模型在复杂背景下的特征提取能力，并完成了基于 ONNX Runtime 的高性能部署。
 
