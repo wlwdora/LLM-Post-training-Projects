@@ -60,8 +60,8 @@ YOLOv8-Hand-Gesture-Recognition/
 ├── requirements.txt        # 项目依赖库清单
 ├── scripts/                    # 脚本文件夹
 │   ├── train.py
-│   ├── detect.py
-│   └── export_onnx.py
+│   ├── add_cbam_p3.py
+│   └── export.py
 ├── best.onnx               # 导出的轻量化推理模型
 ├── cbam_p3.yaml            # 带 CBAM 的模型配置文件
 ├── data.yaml               # 数据集配置
