@@ -1,9 +1,8 @@
-```markdown
 # ✌️ YOLOv8-Gesture: 基于注意力机制的手势识别系统
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![YOLOv8](https://img.shields.io/badge/Framework-YOLOv8-orange.svg)](https://github.com/ultralytics/ultralytics)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE）
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > **项目简介**：这是一个从模型改进到端侧部署的完整 AI 实践项目。针对经典的“石头剪刀布”手势识别场景，通过在 YOLOv8 骨干网络中引入 **CBAM 注意力机制**，显著提升了模型在复杂背景下的特征提取能力，并完成了基于 ONNX Runtime 的高性能部署。
 
@@ -29,17 +28,6 @@
 > **结论**：引入注意力机制后，模型不仅精度更高，且经过 ONNX 优化后，推理延迟大幅降低，完全满足实时性要求。
 
 ---
-
-## 🚀 快速开始
-
-### 1. 环境配置
-确保你的电脑上安装了 Python 3.8 及以上版本，然后克隆本项目并安装依赖：
-
-```bash
-git clone https://github.com/你的用户名/YOLOv8-Hand-Gesture-Recognition.git
-cd YOLOv8-Hand-Gesture-Recognition
-pip install -r requirements.txt
-```
 
 ### 2. 模型准备
 请将训练好的 ONNX 模型文件（命名为 `best.onnx`）放置于项目根目录下。
