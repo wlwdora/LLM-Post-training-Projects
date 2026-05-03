@@ -38,6 +38,5 @@ git clone https://github.com/你的用户名/yolov8-gesture.git
 cd yolov8-gesture
 pip install -r requirements.txt
 
-
-### 2. 模型准备
-本项目已将训练并优化好的 ONNX 模型文件（`best.onnx`）直接包含在仓库根目录中，克隆项目后即可直接使用，无需额外下载。
+2. 模型准备
+本项目已将训练并优化好的 ONNX 模型文件（best.onnx）直接包含在仓库根目录中。克隆项目后即可直接使用，无需额外下载。
