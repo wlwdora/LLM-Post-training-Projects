@@ -31,9 +31,13 @@
 
 ## ️ 快速开始
 
-### 1. 环境配置
+### 1. 环境配置模型准备
 确保你的电脑上安装了 Python 3.8 及以上版本，然后克隆本项目并安装依赖：
 ```bash
 git clone https://github.com/你的用户名/yolov8-gesture.git
 cd yolov8-gesture
 pip install -r requirements.txt
+
+
+### 2. 模型准备
+本项目已将训练并优化好的 ONNX 模型文件（`best.onnx`）直接包含在仓库根目录中，克隆项目后即可直接使用，无需额外下载。
