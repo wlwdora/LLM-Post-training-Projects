@@ -37,14 +37,13 @@ git clone https://github.com/你的用户名/YOLOv8-Hand-Gesture-Recognition.git
 cd YOLOv8-Hand-Gesture-Recognition
 pip install -r requirements.txt
 
-### 2. 模型准备
-请将训练好的 ONNX 模型文件（命名为 `best.onnx`）放置于项目根目录下。
-> 注：由于 GitHub 文件大小限制，模型文件需自行训练或从下方链接获取。
+2. 模型准备
+请将训练好的 ONNX 模型文件（命名为 best.onnx）放置于项目根目录下。
 
+注：由于 GitHub 文件大小限制，模型文件需自行训练或从下方链接获取。
 
-## 📁 项目结构
-
-```
+📁 项目结构
+text
 YOLOv8-Hand-Gesture-Recognition/
 ├── requirements.txt
 ├── best.onnx
@@ -52,15 +51,13 @@ YOLOv8-Hand-Gesture-Recognition/
 ├── data.yaml
 ├── assets/
 └── README.md
-```
-
----
-
-## 🖼️ 效果展示
-
-
+🖼️ 效果展示
 <img width="1206" height="920" alt="505f270b557b4c9a02aebe6f922c0b9d" src="https://github.com/user-attachments/assets/5a5d22fa-5f31-40a0-a74c-f93e36a6f858" />
----
+📄 许可证
+本项目仅供学习与技术交流使用，遵循 MIT 开源协议。
+
+text
+
 
 
 ## 📄 许可证
