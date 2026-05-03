@@ -1,4 +1,3 @@
-```markdown
 # ✌️ YOLOv8-Gesture: 基于注意力机制的手势识别系统
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
@@ -86,4 +85,4 @@ YOLOv8-Hand-Gesture-Recognition/
 ## 📄 许可证
 
 本项目仅供学习与技术交流使用，遵循 MIT 开源协议。
-```这个markdown代码有问题吗
+
