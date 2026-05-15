@@ -3,6 +3,8 @@ train: D:/datasets/train/images
 val: D:/datasets/valid/images
 test: D:/datasets/test/images
 
+
+
 nc: 3
 names: ['Paper', 'Rock', 'Scissors']
 
