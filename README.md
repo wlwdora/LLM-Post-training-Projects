@@ -7,6 +7,7 @@
 
 ## 项目整体架构
 
+<img width="2774" height="1573" alt="system_architecture" src="https://github.com/user-attachments/assets/1a48ea2c-2f84-4ef0-a218-1333a7d22db9" />
 
 ---
 
@@ -16,7 +17,7 @@
 |:---|:---|
 | **视觉过滤** | YOLOv8 轻量感知 Agent |
 | **基座模型** | Qwen-VL / Qwen3-VL 多模态 SFT（LoRA/QLoRA）|
-| **对齐方法** | DPO（直接偏好优化）/ RLHF（Reward Model + PPO）/ GRPO |
+| **对齐方法** | DPO（直接偏好优化）/ RLHF（Reward Model + PPO） |
 | **框架工具** | MS-SWIFT, Transformers, PEFT, TRL, DeepSpeed ZeRO-3 |
 | **推理部署** | vLLM, PagedAttention, Gradio |
 
@@ -41,7 +42,7 @@ python src/sft_qwenvl.py --lora_r 16 --lora_alpha 32
 
 ---
 
-## 项目一：基于 DPO 的私有化助手对齐（实习）
+## 项目一：基于 DPO 的冗余消除对齐
 
 **路径**：SFT 基座 → **DPO 偏好对齐** → vLLM 推理验证
 
@@ -56,7 +57,6 @@ python src/sft_qwenvl.py --lora_r 16 --lora_alpha 32
 | `project-1-dpo-internship/src/vllm_inference.py` | vLLM 本地推理（TTFT/TTOT 测试）|
 
 **关键结果**：
-- DPO 后回答采纳率提升 **25%**
 - 冗长生成长尾显著抑制
 - 本地推理延迟 **<< 1s**
 
@@ -103,13 +103,13 @@ cd llm-post-training-projects
 # 安装环境（两个项目共用）
 pip install -r requirements.txt
 
-# 项目一：DPO 私有化助手
+# 一：DPO 冗余消除
 cd project-1-dpo-internship
 python src/sft_qwen3.py        # SFT
 python src/dpo_train.py         # DPO
 python src/vllm_inference.py  # 推理验证
 
-# 项目二：RLHF 手势语义系统
+# 二：RLHF 手势语义系统
 cd project-2-gesture-rlhf
 python src/rlhf/rm_train.py    # Reward Model
 deepspeed --num_gpus=4 src/rlhf/ppo_train.py --deepspeed src/rlhf/ds_config_zero3.json  # PPO
