@@ -50,10 +50,7 @@ python src/sft_qwenvl.py --lora_r 16 --lora_alpha 32
 
 | 模块 | 说明 |
 |:---|:---|
-| `project-1-dpo-internship/src/sft_data_gen.py` | 领域指令数据构造（含私有 API 描述）|
-| `project-1-dpo-internship/src/sft_qwen3.py` | SFT 训练（MS-SWIFT + LoRA）|
 | `project-1-dpo-internship/src/dpo_train.py` | DPO 偏好对齐（β=0.1，KL 约束）|
-| `project-1-dpo-internship/src/merge_lora.py` | 权重合并 |
 | `project-1-dpo-internship/src/vllm_inference.py` | vLLM 本地推理（TTFT/TTOT 测试）|
 
 **关键结果**：
@@ -74,7 +71,6 @@ python src/sft_qwenvl.py --lora_r 16 --lora_alpha 32
 | `project-2-gesture-rlhf/src/rlhf/rm_train.py` | RM 训练（Bradley-Terry Loss）|
 | `project-2-gesture-rlhf/src/rlhf/ppo_train.py` | PPO 四模型训练（DeepSpeed ZeRO-3）|
 | `project-2-gesture-rlhf/src/rag/clip_retrieval.py` | CLIP RAG 兜底检索 |
-| `project-2-gesture-rlhf/src/app/gradio_app.py` | Gradio UI 部署 |
 
 **关键结果**：
 - 同形异义误判率从 **46% → 1.3%**
