@@ -9,6 +9,43 @@
 
 <img width="2774" height="1573" alt="system_architecture" src="https://github.com/user-attachments/assets/1a48ea2c-2f84-4ef0-a218-1333a7d22db9" />
 
+llm-post-training-projects/
+├── README.md
+├── requirements.txt                   # 两个项目共用的 Python 依赖
+├── .gitignore                         # 忽略模型权重、大数据集、日志缓存
+├── assets/
+│   └── system_architecture.png        # 整体架构图：共享 SFT 基座 → DPO / RLHF 分叉
+├── project-1-dpo-internship/          # 项目一：DPO 去冗余对齐（实习）
+│   ├── README.md
+│   ├── data/
+│   │   └── sample_train.jsonl         # SFT/DPO 指令数据样例
+│   ├── src/
+│   │   ├── sft_data_gen.py            # 领域指令数据构造（含 API 描述）
+│   │   ├── sft_qwen3.py               # SFT 训练（MS-SWIFT + LoRA）
+│   │   ├── dpo_train.py               # DPO 偏好对齐（β=0.1，KL 约束）
+│   │   ├── merge_lora.py              # LoRA 权重合并到基座
+│   │   └── vllm_inference.py          # vLLM 本地推理验证（TTFT/TTOT）
+│   └── assets/
+│       ├── train_loss.png             # DPO 训练 loss 曲线
+│       ├── train_rewards_margins.png  # DPO reward margin 曲线
+│       └── gradio_demo.png            # Gradio UI 部署截图
+└── project-2-gesture-rlhf/            # 项目二：RLHF/PPO 语义消歧（独立）
+    ├── README.md
+    ├── data/
+    │   └── sample_rm_preference_5.jsonl # 场景化偏好数据样例（5条）
+    ├── src/
+    │   ├── rlhf/
+    │   │   ├── rm_model.py            # 场景化 Reward Model 架构
+    │   │   ├── rm_train.py            # RM 训练（Bradley-Terry Loss）
+    │   │   ├── ppo_train.py           # PPO 四模型策略优化
+    │   │   └── ds_config_zero3.json   # DeepSpeed ZeRO-3 分布式配置
+    │   └── rag/
+    │       └── clip_retrieval.py      # CLIP 多模态向量检索兜底
+    └── assets/
+        ├── rm_training.png            # Reward Model 训练曲线
+        ├── ppo_training.png           # PPO 训练曲线（Reward/KL/Critic）
+        └── ppo_validation.png         # RLHF 对齐效果验证对比图
+
 ---
 
 ## 技术栈总览
