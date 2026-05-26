@@ -93,7 +93,7 @@ python src/sft_qwenvl.py --lora_r 16 --lora_alpha 32
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourname/llm-post-training-projects.git
+git clone https://github.com/wlwdora/llm-post-training-projects.git
 cd llm-post-training-projects
 
 # 安装环境（两个项目共用）
