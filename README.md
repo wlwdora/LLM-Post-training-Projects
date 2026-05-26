@@ -11,9 +11,9 @@
 |:---|:---|
 | **视觉过滤** | YOLOv8 轻量感知 Agent |
 | **基座模型** | Qwen-VL / Qwen3-VL 多模态 SFT（LoRA/QLoRA）|
-| **对齐方法** | DPO（直接偏好优化）/ RLHF（Reward Model + PPO）/ GRPO |
+| **对齐方法** | DPO（直接偏好优化）/ RLHF（Reward Model + PPO） |
 | **框架工具** | MS-SWIFT, Transformers, PEFT, TRL, DeepSpeed ZeRO-3 |
-| **推理部署** | vLLM, PagedAttention, Gradio |
+| **推理部署** | vLLM, Gradio |
 
 ---
 
