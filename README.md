@@ -1,7 +1,7 @@
 # LLM Post-training Projects
 
 基于 **Qwen-VL** 多模态基座的**后训练（Post-training）**项目合集。  
-**共享基础**：YOLO 视觉过滤 + Qwen-VL SFT 指令微调；**上层分叉**：DPO 偏好对齐（去冗余）与 RLHF/PPO 场景化语义消歧两条链路。
+**共享基础**：YOLO 视觉过滤 + Qwen-VL SFT 指令微调；**上层分叉**：DPO 偏好对齐（去冗余）与 RLHF/PPO 场景化语义消歧两条链路（RAG模块可选是否需要）。
 
 ---
 
