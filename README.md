@@ -1,89 +1,29 @@
-# ✌️ YOLOv8-Gesture: 基于注意力机制的手势识别系统
+# LLM Post-training Projects
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![YOLOv8](https://img.shields.io/badge/Framework-YOLOv8-orange.svg)](https://github.com/ultralytics/ultralytics)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-> **项目简介**：这是一个从模型改进到端侧部署的完整 AI 实践项目。针对经典的“石头剪刀布”手势识别场景，通过在 YOLOv8 骨干网络中引入 **CBAM 注意力机制**，显著提升了模型在复杂背景下的特征提取能力，并完成了基于 ONNX Runtime 的高性能部署。
+基于 **Qwen-VL** 多模态基座的**后训练（Post-training）**项目合集。  
+**共享基础**：YOLO 视觉过滤 + Qwen-VL SFT 指令微调；**上层分叉**：DPO 偏好对齐（去冗余）与 RLHF/PPO 场景化语义消歧两条链路。
 
 ---
 
-## ✨ 核心亮点
+## 技术栈总览
 
-- 🧠 **模型架构优化**：在 YOLOv8 的 Neck 中嵌入 **CBAM (Convolutional Block Attention Module)**，有效抑制环境噪声，聚焦手势关键特征。
-- ⚡ **极致推理性能**：通过 **ONNX 格式导出与算子融合**，在纯 CPU 环境下推理速度提升 **58%**，完美适配端侧轻量级部署。
-- 🖥️ **多平台部署应用**：基于 **Gradio** 搭建可视化界面，实现了“上传图片 -> 实时推理 -> 结果渲染”的完整交互闭环；Android端使用该onnx量化后进行demo测试，精度下降0.9%，推理速度极快，可实时调用摄像头实现即时推理。
-
----
-
-## 📊 性能对比实验
-
-我们在相同的测试集上对基线模型与改进模型进行了对比，核心指标如下：
-
-| 模型版本 | mAP50 (精度) | mAP50-95 (综合精度) | CPU 推理耗时 (单帧) |
-| :--- | :---: | :---: | :---: |
-| YOLOv8 (Baseline) | 0.92 | 0.72 | 39.95 ms |
-| **YOLOv8 + CBAM (Ours)** | **0.95** ⬆️ | **0.75** ⬆️ | **25.21 ms** ⬇️ |
-
-<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/ca2b0011-5b91-4b26-a041-432857def2d6" />
+| 层级 | 技术 |
+|:---|:---|
+| **视觉过滤** | YOLOv8 轻量感知 Agent |
+| **基座模型** | Qwen-VL / Qwen3-VL 多模态 SFT（LoRA/QLoRA）|
+| **对齐方法** | DPO（直接偏好优化）/ RLHF（Reward Model + PPO）/ GRPO |
+| **框架工具** | MS-SWIFT, Transformers, PEFT, TRL, DeepSpeed ZeRO-3 |
+| **推理部署** | vLLM, PagedAttention, Gradio |
 
 ---
 
-<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/9658746f-4ab9-4710-871c-d34a5638e305" />
+## 共享基座：YOLO + SFT
 
-> **结论**：引入注意力机制后，模型不仅精度更高，且经过 ONNX 优化后，推理延迟大幅降低，完全满足实时性要求。
-
----
-
-## 🚀 快速开始
-
-### 1. 环境配置
-确保你的电脑上安装了 Python 3.8 及以上版本，然后克隆本项目并安装依赖：
+所有项目基于同一套**视觉感知 + 多模态语言基座**：
 
 ```bash
-git clone https://github.com/你的用户名/YOLOv8-Hand-Gesture-Recognition.git
-cd YOLOv8-Hand-Gesture-Recognition
-pip install -r requirements.txt
-```
+# 1. YOLO 过滤（轻量视觉 Agent）
+python src/yolo_detect.py --source input.jpg
 
-### 2. 模型准备
-请将训练好的 ONNX 模型文件（命名为 `best.onnx`）放置于项目根目录下。
-> 注：由于 GitHub 文件大小限制，模型文件需自行训练或从下方链接获取。
-
-
----
-
-## 📁 项目结构
-
-```
-YOLOv8-Hand-Gesture-Recognition/
-├── requirements.txt        # 项目依赖库清单
-├── scripts/                    # 脚本文件夹
-│   ├── train.py
-│   ├── add_cbam_p3.py
-│   └── export.py
-├── best.onnx               # 导出的轻量化推理模型
-├── cbam_p3.yaml            # 带 CBAM 的模型配置文件
-├── data.yaml               # 数据集配置
-└── README.md               # 项目说明文档
-```
-
----
-
-## 🖼️ 效果展示
-
- <img width="1206" height="920" alt="505f270b557b4c9a02aebe6f922c0b9d" src="https://github.com/user-attachments/assets/db9d9839-8384-4498-97b8-244c42099723" />
-
-
----
-
-## 📝 技术博客
-
-[项目完整解析](https://你的博客链接)
-
----
-
-## 📄 许可证
-
-本项目仅供学习与技术交流使用，遵循 MIT 开源协议。
-
+# 2. Qwen-VL SFT（共享基座）
+python src/sft_qwenvl.py --lora_r 16 --lora_alpha 32
