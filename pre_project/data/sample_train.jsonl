@@ -1,0 +1,13 @@
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/c703e22e.jpg"}, {"type": "text", "text": "看图回答"}]}, {"role": "assistant", "content": "剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/0c8a1c60.jpg"}, {"type": "text", "text": "这是什么手势？"}]}, {"role": "assistant", "content": "图中手势是：剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/a0f837ad.jpg"}, {"type": "text", "text": "请识别这个手势"}]}, {"role": "assistant", "content": "根据图片，剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/805122d6.jpg"}, {"type": "text", "text": "石头、剪刀还是布？"}]}, {"role": "assistant", "content": "剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/d9953b39.jpg"}, {"type": "text", "text": "看图回答"}]}, {"role": "assistant", "content": "剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/06ecef81.jpg"}, {"type": "text", "text": ""}]}, {"role": "assistant", "content": "答案是：剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/9247eba9.jpg"}, {"type": "text", "text": "这是什么手势？"}]}, {"role": "assistant", "content": "剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/87014f05.jpg"}, {"type": "text", "text": "图中比出了什么？"}]}, {"role": "assistant", "content": "根据图片，剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/a434d838.jpg"}, {"type": "text", "text": "请识别这个手势"}]}, {"role": "assistant", "content": "剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/f8dc745f.jpg"}, {"type": "text", "text": "这是什么？"}]}, {"role": "assistant", "content": "根据图片，剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/02287da2.jpg"}, {"type": "text", "text": "手势识别"}]}, {"role": "assistant", "content": "答案是：剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/b71e898c.jpg"}, {"type": "text", "text": "请识别这个手势"}]}, {"role": "assistant", "content": "答案是：剪刀"}]}
+{"messages": [{"role": "user", "content": [{"type": "image", "image": "SFT_data_random/a03e9dc0.jpg"}, {"type": "text", "text": ""}]}, {"role": "assistant", "content": "图中手势是：剪刀"}]}

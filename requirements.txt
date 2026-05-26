@@ -1,0 +1,47 @@
+# ============================================
+# LLM Post-training Projects
+# 覆盖 SFT / DPO / RLHF / 多模态 / RAG / vLLM 推理
+# ============================================
+
+# ---------- 核心深度学习 ----------
+torch>=2.1.0
+torchvision>=0.16.0
+torchaudio>=2.1.0
+
+# ---------- 大模型基础 ----------
+transformers>=4.40.0          # Qwen3-VL / Qwen2-VL 支持
+tokenizers>=0.19.0
+datasets>=2.19.0               # 数据加载与处理
+accelerate>=0.30.0             # HuggingFace 分布式训练封装
+
+# ---------- 微调与对齐 ----------
+peft>=0.11.0                  # LoRA / QLoRA
+trl>=0.9.0                   # DPO / PPO 训练器
+# ms-swift                     # 如使用 MS-SWIFT 框架，请取消注释（pip install ms-swift[all]）
+deepspeed>=0.14.0            # ZeRO-3 分布式训练
+
+# ---------- 多模态与视觉 ----------
+Pillow>=10.0.0               # 图像处理
+opencv-python>=4.8.0         # YOLO 前置视觉处理
+ultralytics>=8.0.0            # YOLOv8 检测
+
+# ---------- 推理与部署 ----------
+vllm>=0.4.0                  # PagedAttention 高性能推理
+gradio>=4.0.0                # 快速 UI 验证
+
+# ---------- RAG 向量检索 ----------
+faiss-cpu>=1.8.0             # 向量相似度检索（如用 GPU 版请改为 faiss-gpu）
+scikit-learn>=1.4.0          # 向量归一化与辅助计算
+
+# ---------- 工具与可视化 ----------
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.66.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+scipy>=1.11.0
+
+# ---------- 其他 ----------
+sentencepiece>=0.2.0         # Qwen 系列 tokenizer 依赖
+protobuf>=3.20.0
+packaging>=23.0

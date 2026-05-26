@@ -1,0 +1,10 @@
+{"messages": [{"role": "user", "content": "<image>看图回答"}, {"role": "assistant", "content": "<answer>剪刀</answer>"}], "images": ["SFT_data_random/c7b1f958.jpg"], "rejected_response": "<answer>我查看了这张图片，经过思考，判断图中比出的手势是剪刀</answer>"}
+{"messages": [{"role": "user", "content": "<image>石头剪刀布？"}, {"role": "assistant", "content": "<answer>剪刀</answer>"}], "images": ["SFT_data_random/bd3a8f86.jpg"], "rejected_response": "<ans>剪刀</answer>"}
+{"messages": [{"role": "user", "content": "<image>看图回答"}, {"role": "assistant", "content": "<answer>剪刀</answer>"}], "images": ["SFT_data_random/8849c771.jpg"], "rejected_response": "<answer>布</answer>"}
+{"messages": [{"role": "user", "content": "<image>看图回答"}, {"role": "assistant", "content": "<answer>石头</answer>"}], "images": ["SFT_data_random/260f254b.jpg"], "rejected_response": "<answer>石头< /answer>"}
+{"messages": [{"role": "user", "content": "<image>手势识别"}, {"role": "assistant", "content": "<answer>石头</answer>"}], "images": ["SFT_data_random/8e0a9b56.jpg"], "rejected_response": "<answer>无法识别</answer>"}
+{"messages": [{"role": "user", "content": "<image>这是什么手势？"}, {"role": "assistant", "content": "<answer>剪刀</answer>"}], "images": ["SFT_data_random/72f99f0a.jpg"], "rejected_response": "<answer>剪刀< /answer>"}
+{"messages": [{"role": "user", "content": "<image>石头剪刀布？"}, {"role": "assistant", "content": "<answer>布</answer>"}], "images": ["SFT_data_random/608fa79a.jpg"], "rejected_response": "<answer>我查看了这张图片，经过思考，判断图中比出的手势是布</answer>"}
+{"messages": [{"role": "user", "content": "<image>图中比出了什么？"}, {"role": "assistant", "content": "<answer>石头</answer>"}], "images": ["SFT_data_random/baadb3de.jpg"], "rejected_response": "< answer>石头</answer>"}
+{"messages": [{"role": "user", "content": "<image>石头剪刀布？"}, {"role": "assistant", "content": "<answer>无法识别</answer>"}], "images": ["SFT_data_random/b99dc4e8.jpg"], "rejected_response": "<answer>根据图片中的手势特征进行详细分析后，我认为答案是无法识别</answer>"}
+{"messages": [{"role": "user", "content": "<image>判断一下手势"}, {"role": "assistant", "content": "<answer>布</answer>"}], "images": ["SFT_data_random/113ad3ae.jpg"], "rejected_response": "<answer>剪刀</answer>"}
