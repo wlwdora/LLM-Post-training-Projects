@@ -29,7 +29,7 @@
 
 ```bash
 # 1. YOLO 过滤（轻量视觉 Agent）
-python src/yolo_detect.py --source input.jpg
+python src/yolo.py --source input.jpg
 
 # 2. Qwen-VL SFT（共享基座）
 python src/sft_qwenvl.py --lora_r 16 --lora_alpha 32
