@@ -25,6 +25,7 @@ llm-post-training-projects/
 │      RMtrain.py
 │      SFTtrain.py
 │      SFT_Datasets_gen.py
+│      README.md
 │
 ├─pre_project
 │  ├─asserts
