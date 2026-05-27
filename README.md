@@ -94,6 +94,24 @@ llm-post-training-projects/
 
 ---
 
+### 💡 训练工具选择：原生轻量级框架
+
+本项目的核心流程默认推荐使用 **MS-SWIFT** 框架以获得最佳的工业级性能和多卡支持。
+
+但如果你希望：
+- **深入理解底层原理**：想要从零阅读训练循环（Training Loop）的代码细节。
+- **轻量级实验**：在单卡环境下进行快速的 SFT、DPO 或 PPO 验证，不想配置复杂的 Swift 环境。
+
+我们也为你提供了一个**原生 PyTorch + Transformers 实现的轻量级后训练框架**。
+
+> **🚀 使用原生框架：**
+> 所有的数据处理脚本（`*_Datasets_gen.py`）和训练入口（`*train.py`）均位于 `post_training_framework` 目录下。你可以直接前往该目录查看代码并运行，无需依赖 MS-SWIFT。
+>
+> ```bash
+> cd post_training_framework
+> # 查看该目录下的 README 以获取详细运行指南
+> ```
+---
 ## 共享基座：YOLO + SFT
 
 所有项目基于同一套**视觉感知 + 多模态语言基座**：
