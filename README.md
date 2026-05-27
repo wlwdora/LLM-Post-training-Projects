@@ -13,50 +13,71 @@
 
 ```text
 llm-post-training-projects/
-├── README.md                          # 项目总览与快速开始
-├── requirements.txt                   # 两个项目共用的 Python 依赖
-├── pre_project/                       # 共享基础：YOLO 视觉过滤 + Qwen-VL SFT 基座
-│   ├── assets/
-│   │   ├── sft_eval_loss.png          # SFT 验证 loss 曲线
-│   │   ├── sft_train_learning_rate.png # SFT 学习率变化
-│   │   ├── sft_train_loss.png         # SFT 训练 loss 曲线
-│   │   └── yolo_results.png           # YOLO 检测效果可视化
-│   ├── data/
-│   │   └── sample_train.jsonl         # SFT 指令数据样例
-│   └── src/
-│       ├── SFT/
-│       │   ├── SFT_data_gen.py        # SFT 领域指令数据构造
-│       │   └── SFT_qwen3.py          # Qwen-VL 多模态 SFT 训练（LoRA）
-│       └── Yolo/
-│           ├── cbam_p3.yaml           # YOLO + CBAM 注意力模型配置
-│           ├── data.yaml              # YOLO 数据集配置
-│           ├── pruned.py              # YOLO 模型剪枝优化
-│           └── Yolo.py                # YOLO 手势检测训练与推理
-├── project-1-dpo-internship/          # 项目一：DPO 去冗余对齐（基于 pre_project SFT 基座）
-│   ├── assets/
-│   │   ├── gradio_demo.png            # Gradio UI 部署截图
-│   │   ├── train_loss.png             # DPO 训练 loss 曲线
-│   │   └── train_rewards_margins.png  # DPO reward margin 曲线
-│   ├── data/
-│   │   └── sample_train_10.jsonl    # DPO 成对偏好数据样例（10条）
-│   └── src/
-│       ├── DPO_data_gen.py            # DPO 偏好数据集构造（chosen vs rejected）
-│       └── DPO_qwen3.py             # DPO 直接偏好优化训练（β=0.1）
-└── project-2-gesture-rlhf/            # 项目二：RLHF/PPO 语义消歧（基于 pre_project SFT 基座）
-    ├── assets/
-    │   ├── ppo_training.png           # PPO 训练曲线（Reward/KL/Critic）
-    │   ├── result.png                # RLHF 对齐效果验证对比图
-    │   └── rm_training.png           # Reward Model 训练曲线
-    ├── data/
-    │   └── sample_rm_preference_5.jsonl  # 场景化偏好数据样例（5条）
-    └── src/
-        ├── rag/
-        │   └── clip_retrieval.py    # CLIP 多模态向量检索（RAG 兜底）
-        └── rlhf/
-            ├── ds_config_zero3.json # DeepSpeed ZeRO-3 分布式训练配置
-            ├── ppo_train.py         # PPO 四模型策略优化（Actor/Critic/Reference/Reward）
-            ├── rm_model.py          # 场景化 Reward Model 架构（Qwen-VL + Score Head）
-            └── rm_train.py          # RM 训练（Bradley-Terry Loss）
+│  README.md
+│  requirements.txt
+│
+├─post_training_framework
+│      DPOtrain.py
+│      DPO_Datasets_gen.py
+│      Model_and_Tokenizer.py
+│      PPOtrain.py
+│      requirements.txt
+│      RMtrain.py
+│      SFTtrain.py
+│      SFT_Datasets_gen.py
+│
+├─pre_project
+│  ├─asserts
+│  │      sft_eval_loss.png
+│  │      sft_train_learning_rate.png
+│  │      sft_train_loss.png
+│  │      yolo_results.png
+│  │
+│  ├─data
+│  │      sample_train.jsonl
+│  │
+│  └─src
+│      ├─SFT
+│      │      SFT_data_gen.py
+│      │      SFT_qwen3.py
+│      │
+│      └─Yolo
+│              cbam_p3.yaml
+│              data.yaml
+│              pruned.py
+│              Yolo.py
+│
+├─project-1-dpo-internship
+│  ├─assets
+│  │      gradio_demo.png
+│  │      train_loss.png
+│  │      train_rewards_margins.png
+│  │
+│  ├─data
+│  │      sample_train_10.jsonl
+│  │
+│  └─src
+│          DPO_data_gen.py
+│          DPO_qwen3.py
+│
+└─project-2-gesture-rlhf
+    ├─assets
+    │      ppo_training.png
+    │      result.png
+    │      rm_training.png
+    │
+    ├─data
+    │      sample_rm_preference_5.jsonl
+    │
+    └─src
+        ├─rag
+        │      clip_retrieval.py
+        │
+        └─rlhf
+                ds_config_zero3.json
+                ppo_train.py
+                rm_model.py
+                rm_train.py
 ```
 ---
 
