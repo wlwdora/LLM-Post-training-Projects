@@ -102,7 +102,7 @@ llm-post-training-projects/
 - **深入理解底层原理**：想要从零阅读训练循环（Training Loop）的代码细节。
 - **轻量级实验**：在单卡环境下进行快速的 SFT、DPO 或 PPO 验证，不想配置复杂的 Swift 环境。
 
-我们也为你提供了一个**原生 PyTorch + Transformers 实现的轻量级后训练框架**。
+我也为你提供了一个**原生 PyTorch + Transformers 实现的轻量级后训练框架**。
 
 > **🚀 使用原生框架：**
 > 所有的数据处理脚本（`*_Datasets_gen.py`）和训练入口（`*train.py`）均位于 `post_training_framework` 目录下。你可以直接前往该目录查看代码并运行，无需依赖 MS-SWIFT。
